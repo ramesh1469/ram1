@@ -1,6 +1,6 @@
 ---
 - name: install apache server
-  hosts: all
+  hosts: 172.31.95.28
   become: yes
   tasks:
     - name: install apache
