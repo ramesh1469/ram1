@@ -11,7 +11,7 @@ pipeline {
          steps {
             sh """
                 ls
-                ansible-playbook -k apache2.yaml
+                ansible-playbook -i hosts apache2.yaml
                 """
             
          }
