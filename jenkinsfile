@@ -9,7 +9,10 @@ pipeline {
       }
        stage(build) {
          steps {
-            sh "ansible-playbook -i apache2.yaml"
+            sh """
+                ls
+                ansible-playbook -k apache2.yaml
+                """
             
          }
        }  
