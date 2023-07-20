@@ -1,0 +1,17 @@
+pipeline {
+    agent { label "gol" }
+    triggers { pollSCM('* * * * *') }
+    stages {
+      stage(vcs){
+        steps {
+                git branch:"main",url:"https://github.com/ramesh1469/ram1.git"
+        }
+      }
+       stage(build) {
+         steps {
+            sh "ansible-playbook -i apache2.yaml"
+            
+         }
+       }  
+    }
+    }
